@@ -18,7 +18,6 @@ public class MainFrame extends javax.swing.JFrame {
     private ImageStats stats;
 
     public MainFrame() {
-
         nu.pattern.OpenCV.loadShared();
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
         setLookAndFeel();
@@ -27,7 +26,6 @@ public class MainFrame extends javax.swing.JFrame {
         openFileNameExtensionFilter = new FileNameExtensionFilter("Images [.jpg, .png, .jpeg]", new String[]{"jpg", "png", "jpeg"});
         openJFileChooser.addChoosableFileFilter(openFileNameExtensionFilter);
         initComponents();
-        JOptionPane.showMessageDialog(rootPane, "Please load an image");
         stats = canvas.getStats();
         verticalBar = jScrollPane1.getVerticalScrollBar();
         horizontalBar = jScrollPane1.getHorizontalScrollBar();
@@ -50,6 +48,8 @@ public class MainFrame extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         this.setResizable(false);
         this.setTitle("ScrollPane - By Jesús Lárez & Ignacio Marín");
+        this.setVisible(true);
+        JOptionPane.showMessageDialog(rootPane, "Please load an image");
     }
 
     @SuppressWarnings("unchecked")
